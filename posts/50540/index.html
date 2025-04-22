@@ -13,7 +13,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://sal-qianqian.icu/404.html"/>
+    <link rel="canonical" href="https://sal-qianqian.icu/posts/50540/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -22,13 +22,15 @@
     
         
         <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Page Not Found">
-<meta property="og:url" content="https://sal-qianqian.icu/404.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="（随记）部署海豚调度器">
+<meta property="og:url" content="https://sal-qianqian.icu/posts/50540/index.html">
 <meta property="og:site_name" content="千千的博客">
 <meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://sal-qianqian.icu/images/redefine-og.webp">
+<meta property="article:published_time" content="2025-04-22T06:27:09.000Z">
+<meta property="article:modified_time" content="2025-04-22T06:40:31.383Z">
 <meta property="article:author" content="sal">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://sal-qianqian.icu/images/redefine-og.webp">
@@ -43,7 +45,7 @@
     
     <title>
         
-            Page Not Found | 千千的博客
+            （随记）部署海豚调度器 | 千千的博客
         
     </title>
 
@@ -282,28 +284,258 @@
 			
 
 			<div class="main-content">
-				<div class="page-template-container">
-	
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
 
-	
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">（随记）部署海豚调度器</h1>
+			</div>
+			
+		</div>
 
-	<div class="page-template-content markdown-body">
 		
-		<h1>Page Not Found</h1>
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/sal.jpg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Sal</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-04-22 14:27:09</span>
+        <span class="mobile">2025-04-22 14:27:09</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-04-22 14:40:31</span>
+            <span class="mobile">2025-04-22 14:40:31</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>702 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>2 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
 		
 
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="本地部署启动海豚调度器（DolphinScheduler）的常见问题及解决方法"><a href="#本地部署启动海豚调度器（DolphinScheduler）的常见问题及解决方法" class="headerlink" title="本地部署启动海豚调度器（DolphinScheduler）的常见问题及解决方法"></a>本地部署启动海豚调度器（DolphinScheduler）的常见问题及解决方法</h1><p><strong>文章标签</strong>：maven、java-zookeeper、big data大数据、mysql<br><strong>本文链接</strong>：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/Stupid696/article/details/147416128" >https://blog.csdn.net/Stupid696/article/details/147416128<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>在部署海豚调度器（DolphinScheduler）的过程中，会遇到不少棘手的问题。本文将重点分享其中较为头疼的几个问题及解决方案。假设你已完成海豚调度器源码的拉取，此处不再对该步骤进行详细说明。</p>
+<h2 id="一、部署中面临的主要问题"><a href="#一、部署中面临的主要问题" class="headerlink" title="一、部署中面临的主要问题"></a>一、部署中面临的主要问题</h2><ol>
+<li>如何正确初始化数据库。</li>
+<li>怎样准确配置Zookeeper。</li>
+<li>项目中存在许多类文件名称过长的情况，建议将代码拉取至文件夹名较短的目录（或路径较短的位置），否则在开发过程中易出现文件丢失问题。本文主要围绕前两个问题展开探讨。</li>
+</ol>
+<h2 id="二、Zookeeper部署步骤"><a href="#二、Zookeeper部署步骤" class="headerlink" title="二、Zookeeper部署步骤"></a>二、Zookeeper部署步骤</h2><ol>
+<li><strong>下载Zookeeper</strong>：下载3.8.0版本的Zookeeper，下载链接为：<a class="link"   target="_blank" rel="noopener" href="https://archive.apache.org/dist/zookeeper/zookeeper-3.8.0/apache-zookeeper-3.8.0-bin.tar.gz" >https://archive.apache.org/dist/zookeeper/zookeeper-3.8.0/apache-zookeeper-3.8.0-bin.tar.gz<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>。</li>
+<li><strong>解压与配置文件处理</strong>：下载完成后解压文件，进入解压后的<code>conf</code>文件夹，复制一份<code>zoo_sample.cfg</code>文件，并将其重命名为<code>zoo.cfg</code>，放置在该目录下。</li>
+</ol>
+<p><br></br></p>
+<p> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/posts/undefined/image.png"
+                      alt="alt text"
+                ><br> <br></br></p>
+<ol start="3">
+<li><strong>创建文件夹</strong>：在Zookeeper文件夹下创建<code>data</code>和<code>log</code>两个文件夹。<br><br></br><br> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/posts/undefined/image-1.png"
+                      alt="alt text"
+                ></li>
+</ol>
+<p><br></br></p>
+<ol start="4">
+<li><strong>修改配置文件参数</strong>：打开<code>zoo.cfg</code>文件，修改<code>dataDir</code>的值为刚刚创建的<code>data</code>文件夹的路径，例如<code>dataDir=F:\d\apache-zookeeper-3.8.0-bin\data</code> ；同时，<code>clientPort</code>保持默认的<code>2181</code>即可（该端口是客户端连接的端口），<code>maxClientCnxns</code>用于设置最大客户端连接数，可根据实际需求调整。<br><br></br><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/posts/undefined/image-2.png"
+                      alt="alt text"
+                ></li>
+</ol>
+<p><br></br></p>
+<ol start="5">
+<li><strong>启动Zookeeper</strong>：打开<code>bin</code>目录下的<code>zkServer.cmd</code>和<code>zkCli.cmd</code>，即可启动Zookeeper服务。若在本地成功部署Zookeeper，那么在海豚调度器的配置文件中无需再对Zookeeper的配置信息进行修改。</li>
+</ol>
+<h2 id="三、数据库配置步骤"><a href="#三、数据库配置步骤" class="headerlink" title="三、数据库配置步骤"></a>三、数据库配置步骤</h2><ol>
+<li><p><strong>创建数据库</strong>：使用SQL语句创建数据库，执行</p>
+<p><code>CREATE DATABASE dolphinscheduler DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;</code>。</p>
+</li>
+<li><p><strong>创建数据表</strong>：运行相应的SQL脚本，路径为<code>dolphinscheduler-dao/src/main/java/resources/org.apache.dolphinscheduler.dao.mapper/sql/upgrade</code>，根据实际使用的数据库类型，选择<code>dolphinscheduler_h2.sql</code>、<code>dolphinscheduler_mysql.sql</code>或<code>dolphinscheduler_postgresqlsql</code>脚本执行。这里我们用的是mysql，那么就直接运行mysql的脚本</p>
+</li>
+</ol>
+<p> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/posts/undefined/image-3.png"
+                      alt="alt text"
+                ></p>
+<ol start="3">
+<li><p><strong>修改数据库链接信息</strong>：由于后端涉及<code>worker</code>、<code>api</code>和<code>master</code>三个服务模块，需在对应的<code>yaml</code>文件中修改数据库的链接信息，具体修改方式因项目结构而异，此处不做详细阐述。若出现找不到JDBC驱动器的问题，可在<code>pom</code>文件中添加8.0版本以上的<code>mysql connector</code>依赖。此外，项目需使用Java8进行编译。</p>
+</li>
+<li><p><strong>最后，请记得启用mysql配置</strong>：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/posts/undefined/image-4.png"
+                      alt="alt text"
+                ></p>
+</li>
+</ol>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> （随记）部署海豚调度器</li>
+        <li><strong>作者:</strong> Sal</li>
+        <li><strong>创建于
+                :</strong> 2025-04-22 14:27:09</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-04-22 14:40:31
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://redefine.ohevan.com/posts/50540/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/posts/56132/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">我是怎么用hexo+github page 搭建自己的博客网站的</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div class="twikoo-container">
+        <script data-swup-reload-script
+                src='https://cdnjs.cloudflare.com/ajax/libs/twikoo/1.6.10/twikoo.all.min.js'
+        ></script>
+        <div id="twikoo-comment"></div>
+        <script data-swup-reload-script>
+            function loadTwikoo() {
+                twikoo.init({
+                    el: '#twikoo-comment',
+                    envId: 'https://polite-daifuku-44890b.netlify.app/.netlify/functions/twikoo',
+                });
+            }
+
+            if ('true') {
+                const loadTwikooTimeout = setTimeout(() => {
+                    loadTwikoo();
+                    clearTimeout(loadTwikooTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadTwikoo);
+            }
+        </script>
+    </div>
+
+
+        
+        
+    
+</div>
+
+		</div>
 		
 	</div>
 
-	<div class="page-template-comments">
-		
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">（随记）部署海豚调度器</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%90%AF%E5%8A%A8%E6%B5%B7%E8%B1%9A%E8%B0%83%E5%BA%A6%E5%99%A8%EF%BC%88DolphinScheduler%EF%BC%89%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-text">本地部署启动海豚调度器（DolphinScheduler）的常见问题及解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%83%A8%E7%BD%B2%E4%B8%AD%E9%9D%A2%E4%B8%B4%E7%9A%84%E4%B8%BB%E8%A6%81%E9%97%AE%E9%A2%98"><span class="nav-text">一、部署中面临的主要问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Zookeeper%E9%83%A8%E7%BD%B2%E6%AD%A5%E9%AA%A4"><span class="nav-text">二、Zookeeper部署步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4"><span class="nav-text">三、数据库配置步骤</span></a></li></ol></li></ol>
+
 	</div>
 </div>
-
-<div class="paginator">
+	</div>
 	
 </div>
-  
 			</div>
 
 			
@@ -386,6 +618,26 @@
 	</div>
 
 	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
 
 	<div class="right-side-tools-container">
 		<div class="side-tools-container">
@@ -467,6 +719,7 @@
         containers: ["#swup"],
     });
 </script>
+
 
 
 
