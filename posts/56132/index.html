@@ -177,13 +177,13 @@
                                     <ul class="sub-menu">
                                         
                                             <li>
-                                                <a target="_blank" rel="noopener" href="https://space.bilibili.com/400595140">
+                                                <a target="_blank" rel="noopener external nofollow noreferrer" href="https://space.bilibili.com/400595140">
                                                     B站
                                                 </a>
                                             </li>
                                         
                                             <li>
-                                                <a target="_blank" rel="noopener" href="https://blog.csdn.net/Stupid696?spm=1000.2115.3001.5343">
+                                                <a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/Stupid696?spm=1000.2115.3001.5343">
                                                     CSDN
                                                 </a>
                                             </li>
@@ -278,7 +278,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -381,13 +381,16 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<h1 id="记录一下我的博客搭建过程"><a href="#记录一下我的博客搭建过程" class="headerlink" title="记录一下我的博客搭建过程"></a>记录一下我的博客搭建过程</h1><!-- vscode-markdown-toc -->
+			<h1 id="记录一下我的博客搭建过程"><a class="markdownIt-Anchor" href="#记录一下我的博客搭建过程"></a> 记录一下我的博客搭建过程</h1>
+<!-- vscode-markdown-toc -->
 <ul>
-<li><ol>
+<li>
+<ol>
 <li><a href="#">前言</a></li>
 </ol>
 </li>
-<li><ol start="2">
+<li>
+<ol start="2">
 <li><a href="#githubpagehexocloudflare">框架及工具：github page，hexo，cloudflare</a></li>
 </ol>
 <ul>
@@ -396,17 +399,20 @@
 <li>2.3. <a href="#CDNcloudflare">免费的CDN加速站点：cloudflare</a></li>
 </ul>
 </li>
-<li><ol start="3">
+<li>
+<ol start="3">
 <li><a href="#-1">部署前的准备</a></li>
 </ol>
 <ul>
-<li>3.1. <a href="#npmgit">安装npm与git</a><ul>
+<li>3.1. <a href="#npmgit">安装npm与git</a>
+<ul>
 <li>3.1.1. <a href="#-1">由于这些东西都比较简单 我直接一笔带过</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><ol start="4">
+<li>
+<ol start="4">
 <li><a href="#hexohexo">安装hexo 并初始化hexo项目</a></li>
 </ol>
 <ul>
@@ -416,7 +422,8 @@
 <li>4.4. <a href="#-1">在浏览器中访问个人网站</a></li>
 </ul>
 </li>
-<li><ol start="5">
+<li>
+<ol start="5">
 <li><a href="#githubpages">配置github pages</a></li>
 </ol>
 <ul>
@@ -424,7 +431,8 @@
 <li>5.2. <a href="#-1">创建仓库并部署代码</a></li>
 </ul>
 </li>
-<li><ol start="6">
+<li>
+<ol start="6">
 <li><a href="#cloudflare">购买域名并使用cloudflare代理加速。</a></li>
 </ol>
 <ul>
@@ -432,7 +440,8 @@
 <li>6.2. <a href="#-1">替换你的域名</a></li>
 </ul>
 </li>
-<li><ol start="7">
+<li>
+<ol start="7">
 <li><a href="#cloudflarecdn">使用cloudflare做cdn加速。</a></li>
 </ol>
 <ul>
@@ -448,7 +457,8 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. <a name=''></a>前言</h2><blockquote>
+<h2 id="1-a-namea前言"><a class="markdownIt-Anchor" href="#1-a-namea前言"></a> 1. <a name></a>前言</h2>
+<blockquote>
 <p>这是我创建我的博客网站以来的第一篇文章，本来走的方向就是后端对网页的建立一窍不通，之前也偷了很多懒对于计算机网络的东西也是没有了解多少，所以折腾了四五天，碰了不少壁，但网站部署出来的那一刻，是我接触代码以来最有成就感感觉自己做的事最有意义的一个瞬间。</p>
 </blockquote>
 <blockquote>
@@ -457,113 +467,89 @@
 <blockquote>
 <p>我会省略页面开发，美化的过程，只单纯的向大家展示如何部署。</p>
 </blockquote>
-<h2 id="2-框架及工具：github-page，hexo，cloudflare"><a href="#2-框架及工具：github-page，hexo，cloudflare" class="headerlink" title="2. 框架及工具：github page，hexo，cloudflare"></a>2. <a name='githubpagehexocloudflare'></a>框架及工具：github page，hexo，cloudflare</h2><h3 id="2-1-前端框架：hexo"><a href="#2-1-前端框架：hexo" class="headerlink" title="2.1. 前端框架：hexo"></a>2.1. <a name='___hexo___'></a>前端框架：<em><strong>hexo</strong></em></h3><p>hexo是一款非常简洁又高效的博客框架，哪怕你没有接触过前端的知识，你也可以通过套框架开发你个人的博客项目。你只需要跟着教程输几个指令就可以完成个人博客的开发。</p>
-<h3 id="2-2-静态网站托管：github-page"><a href="#2-2-静态网站托管：github-page" class="headerlink" title="2.2. 静态网站托管：github page"></a>2.2. <a name='githubpage'></a>静态网站托管：github page</h3><p>如果你想运行自己的前端项目，那么肯定需要一台服务器，但是只是为了自己搭建一个博客，又不是什么大型的项目，所以犯不着花那个钱再去买一个云服务器。  </p>
+<h2 id="2-a-namegithubpagehexocloudflarea框架及工具github-pagehexocloudflare"><a class="markdownIt-Anchor" href="#2-a-namegithubpagehexocloudflarea框架及工具github-pagehexocloudflare"></a> 2. <a name="githubpagehexocloudflare"></a>框架及工具：github page，hexo，cloudflare</h2>
+<h3 id="21-a-name___hexo___a前端框架hexo"><a class="markdownIt-Anchor" href="#21-a-name___hexo___a前端框架hexo"></a> 2.1. <a name="___hexo___"></a>前端框架：<em><strong>hexo</strong></em></h3>
+<p>hexo是一款非常简洁又高效的博客框架，哪怕你没有接触过前端的知识，你也可以通过套框架开发你个人的博客项目。你只需要跟着教程输几个指令就可以完成个人博客的开发。</p>
+<h3 id="22-a-namegithubpagea静态网站托管github-page"><a class="markdownIt-Anchor" href="#22-a-namegithubpagea静态网站托管github-page"></a> 2.2. <a name="githubpage"></a>静态网站托管：github page</h3>
+<p>如果你想运行自己的前端项目，那么肯定需要一台服务器，但是只是为了自己搭建一个博客，又不是什么大型的项目，所以犯不着花那个钱再去买一个云服务器。</p>
 <p>这里，我们就要用到github page了，github page可以免费托管你的静态网页，这样能最大的节省成本。</p>
-<h3 id="2-3-免费的CDN加速站点：cloudflare"><a href="#2-3-免费的CDN加速站点：cloudflare" class="headerlink" title="2.3. 免费的CDN加速站点：cloudflare"></a>2.3. <a name='CDNcloudflare'></a>免费的CDN加速站点：cloudflare</h3><blockquote>
+<h3 id="23-a-namecdncloudflarea免费的cdn加速站点cloudflare"><a class="markdownIt-Anchor" href="#23-a-namecdncloudflarea免费的cdn加速站点cloudflare"></a> 2.3. <a name="CDNcloudflare"></a>免费的CDN加速站点：cloudflare</h3>
+<blockquote>
 <p>由于国情存在一堵墙，所以我们对github的访问是极其的慢的，甚至有时候直接访问不到。</p>
 </blockquote>
 <blockquote>
 <p>因此为了保证其他人或者我们自己对我们博客访问连接速度，我们就要用到CDN加速服务。</p>
 </blockquote>
 <p>cloudflare每天会提供十万次点击的免费次数，虽然站点不在国内，但也比直接连接github快很多。</p>
-<h2 id="3-部署前的准备"><a href="#3-部署前的准备" class="headerlink" title="3. 部署前的准备"></a>3. <a name='-1'></a>部署前的准备</h2><h3 id="3-1-安装npm与git"><a href="#3-1-安装npm与git" class="headerlink" title="3.1. 安装npm与git"></a>3.1. <a name='npmgit'></a>安装npm与git</h3><h4 id="3-1-1-由于这些东西都比较简单-我直接一笔带过"><a href="#3-1-1-由于这些东西都比较简单-我直接一笔带过" class="headerlink" title="3.1.1. 由于这些东西都比较简单 我直接一笔带过"></a>3.1.1. <a name='-1'></a>由于这些东西都比较简单 我直接一笔带过</h4><h5 id="git的安装"><a href="#git的安装" class="headerlink" title="git的安装"></a>git的安装</h5><p>git官方下载地址: Git - Downloading Package (git-scm.com)</p>
+<h2 id="3-a-name-1a部署前的准备"><a class="markdownIt-Anchor" href="#3-a-name-1a部署前的准备"></a> 3. <a name="-1"></a>部署前的准备</h2>
+<h3 id="31-a-namenpmgita安装npm与git"><a class="markdownIt-Anchor" href="#31-a-namenpmgita安装npm与git"></a> 3.1. <a name="npmgit"></a>安装npm与git</h3>
+<h4 id="311-a-name-1a由于这些东西都比较简单-我直接一笔带过"><a class="markdownIt-Anchor" href="#311-a-name-1a由于这些东西都比较简单-我直接一笔带过"></a> 3.1.1. <a name="-1"></a>由于这些东西都比较简单 我直接一笔带过</h4>
+<h5 id="git的安装"><a class="markdownIt-Anchor" href="#git的安装"></a> git的安装</h5>
+<p>git官方下载地址: Git - Downloading Package (<a class="link" target="_blank" rel="noopener external nofollow noreferrer" href="http://git-scm.com">git-scm.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>)</p>
 <p>安装后验证: 在 cmd 中输入命令 <code>git --version</code>, 查看 Git 版本</p>
-<h5 id="npm的安装"><a href="#npm的安装" class="headerlink" title="npm的安装"></a>npm的安装</h5><p>官方下载地址: Node.js (nodejs.org)</p>
+<h5 id="npm的安装"><a class="markdownIt-Anchor" href="#npm的安装"></a> npm的安装</h5>
+<p>官方下载地址: Node.js (<a class="link" target="_blank" rel="noopener external nofollow noreferrer" href="http://nodejs.org">nodejs.org<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>)</p>
 <p>安装后验证：cmd中输入<code>node -v</code>, 查看 Node 版本</p>
-<h2 id="4-安装hexo-并初始化hexo项目"><a href="#4-安装hexo-并初始化hexo项目" class="headerlink" title="4. 安装hexo 并初始化hexo项目"></a>4. <a name='hexohexo'></a>安装hexo 并初始化hexo项目</h2><p>确保你的电脑上有 npm 以及 git，就可以开始安装hexo并本地初始化项目了。</p>
-<h3 id="4-1-安装hexo"><a href="#4-1-安装hexo" class="headerlink" title="4.1. 安装hexo"></a>4.1. <a name='hexo'></a>安装hexo</h3><p>打开命令行 输入 <code>npm install -g hexo-cli</code></p>
+<h2 id="4-a-namehexohexoa安装hexo-并初始化hexo项目"><a class="markdownIt-Anchor" href="#4-a-namehexohexoa安装hexo-并初始化hexo项目"></a> 4. <a name="hexohexo"></a>安装hexo 并初始化hexo项目</h2>
+<p>确保你的电脑上有 npm 以及 git，就可以开始安装hexo并本地初始化项目了。</p>
+<h3 id="41-a-namehexoa安装hexo"><a class="markdownIt-Anchor" href="#41-a-namehexoa安装hexo"></a> 4.1. <a name="hexo"></a>安装hexo</h3>
+<p>打开命令行 输入 <code>npm install -g hexo-cli</code></p>
 <p>这是全局安装hexo的命令，这样你就可以在任何一个地方使用hexo的命令了。</p>
 <p>同样的 安装结束后 输入 <code>hexo -v</code> 验证是否安装成功。</p>
-<h3 id="4-2-初始化hexo项目"><a href="#4-2-初始化hexo项目" class="headerlink" title="4.2. 初始化hexo项目"></a>4.2. <a name='hexo-1'></a>初始化hexo项目</h3><p>可以新建一个文件夹，随便什么名字，可以写成MyBlog。</p>
-<p>打开你新建的这个文件夹，在文件夹中运行命令行，可以这样：<br><br><br><br><br></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-2.png"
-                      alt="alt text"
-                ><br><br><br><br></p>
-<p>接着输入 <code>hexo init</code> 项目就会初始化。<br><br><br><br><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-3.png"
-                      alt="alt text"
-                ></p>
-<p>完成后如下：<br><br><br><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-4.png"
-                      alt="alt text"
-                ><br><br><br><br><br><br>文件夹如下：<br><br><br><br><br><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-5.png"
-                      alt="alt text"
-                ></p>
-<h3 id="4-3-本地部署hexo项目"><a href="#4-3-本地部署hexo项目" class="headerlink" title="4.3. 本地部署hexo项目"></a>4.3. <a name='hexo-1'></a>本地部署hexo项目</h3><p>接下来开始部署在本地上，输入<code>hexo generate</code> 或 <code>hexo g</code>来生成静态文件。</p>
+<h3 id="42-a-namehexo-1a初始化hexo项目"><a class="markdownIt-Anchor" href="#42-a-namehexo-1a初始化hexo项目"></a> 4.2. <a name="hexo-1"></a>初始化hexo项目</h3>
+<p>可以新建一个文件夹，随便什么名字，可以写成MyBlog。</p>
+<p>打开你新建的这个文件夹，在文件夹中运行命令行，可以这样：<br>
+<br><br><br><br></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-2.png" alt="alt text"><br>
+<br><br><br></p>
+<p>接着输入 <code>hexo init</code> 项目就会初始化。<br>
+<br><br><br><br>
+<img lazyload src="/images/loading.svg" data-src="image-3.png" alt="alt text"></p>
+<p>完成后如下：<br>
+<br><br><br>
+<img lazyload src="/images/loading.svg" data-src="image-4.png" alt="alt text"><br>
+<br><br><br><br><br>
+文件夹如下：<br>
+<br><br><br><br><br>
+<img lazyload src="/images/loading.svg" data-src="image-5.png" alt="alt text"></p>
+<h3 id="43-a-namehexo-1a本地部署hexo项目"><a class="markdownIt-Anchor" href="#43-a-namehexo-1a本地部署hexo项目"></a> 4.3. <a name="hexo-1"></a>本地部署hexo项目</h3>
+<p>接下来开始部署在本地上，输入<code>hexo generate</code> 或 <code>hexo g</code>来生成静态文件。</p>
 <p>如下：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-6.png"
-                      alt="alt text"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-6.png" alt="alt text"></p>
 <p>本地部署指令：<code>hexo server</code>或<code>hexo s</code></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-7.png"
-                      alt="alt text"
-                ><br><br><br><br>出现以上内容，说明启动成功，访问localhost:4000 端口，就可以看到刚刚部署的网页了。<br><br><br></p>
-<h3 id="4-4-在浏览器中访问个人网站"><a href="#4-4-在浏览器中访问个人网站" class="headerlink" title="4.4. 在浏览器中访问个人网站"></a>4.4. <a name='-1'></a>在浏览器中访问个人网站</h3><p>在浏览器中输入 localhost:4000</p>
+<p><img lazyload src="/images/loading.svg" data-src="image-7.png" alt="alt text"><br>
+<br><br><br>
+出现以上内容，说明启动成功，访问localhost:4000 端口，就可以看到刚刚部署的网页了。<br>
+<br><br></p>
+<h3 id="44-a-name-1a在浏览器中访问个人网站"><a class="markdownIt-Anchor" href="#44-a-name-1a在浏览器中访问个人网站"></a> 4.4. <a name="-1"></a>在浏览器中访问个人网站</h3>
+<p>在浏览器中输入 localhost:4000</p>
 <p>将出现如下页面：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-8.png"
-                      alt="alt text"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-8.png" alt="alt text"></p>
 <p>我们可以在博客文件夹中的___config.yml__文件中修改配置，如title，subtitle，时区，语言等，大家可以自行探索，或查看官方文档，这里还是比较简单。</p>
-<h2 id="5-配置github-pages"><a href="#5-配置github-pages" class="headerlink" title="5. 配置github pages"></a>5. <a name='githubpages'></a>配置github pages</h2><h3 id="5-1-创建github账户"><a href="#5-1-创建github账户" class="headerlink" title="5.1. 创建github账户"></a>5.1. <a name='github'></a>创建github账户</h3><blockquote>
+<h2 id="5-a-namegithubpagesa配置github-pages"><a class="markdownIt-Anchor" href="#5-a-namegithubpagesa配置github-pages"></a> 5. <a name="githubpages"></a>配置github pages</h2>
+<h3 id="51-a-namegithuba创建github账户"><a class="markdownIt-Anchor" href="#51-a-namegithuba创建github账户"></a> 5.1. <a name="github"></a>创建github账户</h3>
+<blockquote>
 <p>考虑到很多就算是计算机专业的同学可能都不知道github是什么，这一部分我会尽量写详细点，假定你是个连github都不会连的小白。</p>
 </blockquote>
-<p><a class="link"   target="_blank" rel="noopener" href="https://gitee.com/rmbgame/SteamTools/releases/tag/3.0.0-rc.16" >https://gitee.com/rmbgame/SteamTools/releases/tag/3.0.0-rc.16<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener external nofollow noreferrer" href="https://gitee.com/rmbgame/SteamTools/releases/tag/3.0.0-rc.16">https://gitee.com/rmbgame/SteamTools/releases/tag/3.0.0-rc.16<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p>首先我们打开这个网站 下载曾经的steam++，现在的watt toolkit。</p>
 <p>这个软件集成了steam，github的加速，让大家可以不用加速器或者挂梯子就能访问github，里面还配置了其他站点的加速，有兴趣的可以自己探索。</p>
 <p>现在我们打开github并创建一个账户</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/" >https://github.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com">https://github.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <blockquote>
 <p>注册这一步就不再细说，补充一点，用户名可以好好起一个自己喜欢的，因为我们要访问自己的github page是通过 “用户名”.github.io来访问的，不过也无所谓，后期我们会购买一个新的域名做cdn加速，当然如果你能忍受国内链接github这个超慢的速度，也可以不用再做域名映射。</p>
 </blockquote>
-<h3 id="5-2-创建仓库并部署代码"><a href="#5-2-创建仓库并部署代码" class="headerlink" title="5.2. 创建仓库并部署代码"></a>5.2. <a name='-1'></a>创建仓库并部署代码</h3><p>接着我们创建一个仓库，点击左上角的new：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-9.png"
-                      alt="alt text"
-                ></p>
+<h3 id="52-a-name-1a创建仓库并部署代码"><a class="markdownIt-Anchor" href="#52-a-name-1a创建仓库并部署代码"></a> 5.2. <a name="-1"></a>创建仓库并部署代码</h3>
+<p>接着我们创建一个仓库，点击左上角的new：</p>
+<p><img lazyload src="/images/loading.svg" data-src="image-9.png" alt="alt text"></p>
 <p><strong>注意！这里的仓库名一定要是你的 &lt;用户名&gt;.github.io，否则github不会给你做页面托管！</strong></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-11.png"
-                      alt="alt text"
-                ></p>
-<p><br><br><br>接下来我们进入到仓库，并复制对应的github链接：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-12.png"
-                      alt="alt text"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-11.png" alt="alt text"></p>
+<p><br><br><br>
+接下来我们进入到仓库，并复制对应的github链接：</p>
+<p><img lazyload src="/images/loading.svg" data-src="image-12.png" alt="alt text"></p>
 <p>打开hexo文件中的_config.yml文件</p>
 <p>拉到最下面，找到deploy</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-13.png"
-                      alt="alt text"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-13.png" alt="alt text"></p>
 <p>repo中输入的是你的仓库地址。</p>
 <p><strong>注意：</strong> yml格式的文件，对应低一级的字段要在上级字段前至少空两格</p>
 <p>我们在从博客文件夹中打开命令行，输入以下指令：</p>
@@ -573,90 +559,53 @@
 <p>就可以将个人项目部署在github page上了。</p>
 <p>接着我们直接访问 &lt;你的用户名&gt;.github.io 就可以访问到我们部署的博客了。</p>
 <p>同样的，其他人访问该链接也是如此。</p>
-<h2 id="最麻烦的东西就在下面了，如果你觉得配置到github上已经足够，看到这里就可以了但是如果你想搭起一个国内能够较为稳定访问的网站，那就接着往下看"><a href="#最麻烦的东西就在下面了，如果你觉得配置到github上已经足够，看到这里就可以了但是如果你想搭起一个国内能够较为稳定访问的网站，那就接着往下看" class="headerlink" title="最麻烦的东西就在下面了，如果你觉得配置到github上已经足够，看到这里就可以了但是如果你想搭起一个国内能够较为稳定访问的网站，那就接着往下看"></a><em><strong>最麻烦的东西就在下面了，如果你觉得配置到github上已经足够，看到这里就可以了</strong></em><br><br><br><br><em><strong>但是如果你想搭起一个国内能够较为稳定访问的网站，那就接着往下看</strong></em></h2><h2 id="6-购买域名并使用cloudflare代理加速。"><a href="#6-购买域名并使用cloudflare代理加速。" class="headerlink" title="6. 购买域名并使用cloudflare代理加速。"></a>6. <a name='cloudflare'></a>购买域名并使用cloudflare代理加速。</h2><h3 id="6-1-购买域名"><a href="#6-1-购买域名" class="headerlink" title="6.1. 购买域名"></a>6.1. <a name='-1'></a>购买域名</h3><p>上述的一切都做好之后，就可以上网购买一个域名了，域名购买网站极多并且优惠服务隔三差五的就会有，我不去细讲有哪些域名购买服务网站。我这里只简单说一下我是在哪买的。</p>
-<p>阿里云有一个新用户首年优惠，超级便宜，大家可以看看后续一年价格少的选，到期也可以在考虑续费还是购买新的域名，这里我就不再赘述。<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image14.png"
-                      alt="alt text"
-                ></p>
-<h3 id="6-2-替换你的域名"><a href="#6-2-替换你的域名" class="headerlink" title="6.2. 替换你的域名"></a>6.2. <a name='-1'></a>替换你的域名</h3><p>点进你的page仓库，点击settings<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-15.png"
-                      alt="alt text"
-                ></p>
+<h2 id="最麻烦的东西就在下面了如果你觉得配置到github上已经足够看到这里就可以了brbr但是如果你想搭起一个国内能够较为稳定访问的网站那就接着往下看"><a class="markdownIt-Anchor" href="#最麻烦的东西就在下面了如果你觉得配置到github上已经足够看到这里就可以了brbr但是如果你想搭起一个国内能够较为稳定访问的网站那就接着往下看"></a> <em><strong>最麻烦的东西就在下面了，如果你觉得配置到github上已经足够，看到这里就可以了</strong></em><br>
+<br><br><br>
+<em><strong>但是如果你想搭起一个国内能够较为稳定访问的网站，那就接着往下看</strong></em></h2>
+<h2 id="6-a-namecloudflarea购买域名并使用cloudflare代理加速"><a class="markdownIt-Anchor" href="#6-a-namecloudflarea购买域名并使用cloudflare代理加速"></a> 6. <a name="cloudflare"></a>购买域名并使用cloudflare代理加速。</h2>
+<h3 id="61-a-name-1a购买域名"><a class="markdownIt-Anchor" href="#61-a-name-1a购买域名"></a> 6.1. <a name="-1"></a>购买域名</h3>
+<p>上述的一切都做好之后，就可以上网购买一个域名了，域名购买网站极多并且优惠服务隔三差五的就会有，我不去细讲有哪些域名购买服务网站。我这里只简单说一下我是在哪买的。</p>
+<p>阿里云有一个新用户首年优惠，超级便宜，大家可以看看后续一年价格少的选，到期也可以在考虑续费还是购买新的域名，这里我就不再赘述。<br>
+<img lazyload src="/images/loading.svg" data-src="image14.png" alt="alt text"></p>
+<h3 id="62-a-name-1a替换你的域名"><a class="markdownIt-Anchor" href="#62-a-name-1a替换你的域名"></a> 6.2. <a name="-1"></a>替换你的域名</h3>
+<p>点进你的page仓库，点击settings<br>
+<img lazyload src="/images/loading.svg" data-src="image-15.png" alt="alt text"></p>
 <p>点击左侧的page</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-16.png"
-                      alt="alt text"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-16.png" alt="alt text"></p>
 <p>在custom domain这一栏填入你的域名并save</p>
 <blockquote>
 <p>只要填入save即可，大多数时候会显示dns解析有错，不用理会，依旧可以通过域名访问。</p>
 </blockquote>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-17.png"
-                      alt="alt text"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-17.png" alt="alt text"></p>
 <blockquote>
 <p>注意，每次用hexo deploy的时候这里都会被重置为空，解决方法是在你博客项目下的public文件夹中创建一个名为CNAME的文件，用文本编辑器打开并填入你的域名，这样就不用每部署一次就来填写一次自己的域名了。</p>
 </blockquote>
 <p>此时访问你的域名，就会直接跳转到你的github page项目中。</p>
-<h2 id="7-使用cloudflare做cdn加速。"><a href="#7-使用cloudflare做cdn加速。" class="headerlink" title="7. 使用cloudflare做cdn加速。"></a>7. <a name='cloudflarecdn'></a>使用cloudflare做cdn加速。</h2><blockquote>
+<h2 id="7-a-namecloudflarecdna使用cloudflare做cdn加速"><a class="markdownIt-Anchor" href="#7-a-namecloudflarecdna使用cloudflare做cdn加速"></a> 7. <a name="cloudflarecdn"></a>使用cloudflare做cdn加速。</h2>
+<blockquote>
 <p>这里我不去讲复杂的概念，大家只要清楚，github在国内访问速度过慢，而cloudflare可以免费提供每天十万次的点击加速，对我们的博客来说完全足够，了解这点就好。</p>
 </blockquote>
-<h3 id="7-1-打开cloudflare注册并登录"><a href="#7-1-打开cloudflare注册并登录" class="headerlink" title="7.1. 打开cloudflare注册并登录"></a>7.1. <a name='cloudflare-1'></a>打开cloudflare注册并登录</h3><p>注册登录这一步不再细说。</p>
-<h3 id="7-2-将自己的域名交给cloudflare管理"><a href="#7-2-将自己的域名交给cloudflare管理" class="headerlink" title="7.2. 将自己的域名交给cloudflare管理"></a>7.2. <a name='cloudflare-1'></a>将自己的域名交给cloudflare管理</h3><p>点击左侧的管理域（或者账户主页）</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-18.png"
-                      alt="alt text"
-                ></p>
+<h3 id="71-a-namecloudflare-1a打开cloudflare注册并登录"><a class="markdownIt-Anchor" href="#71-a-namecloudflare-1a打开cloudflare注册并登录"></a> 7.1. <a name="cloudflare-1"></a>打开cloudflare注册并登录</h3>
+<p>注册登录这一步不再细说。</p>
+<h3 id="72-a-namecloudflare-1a将自己的域名交给cloudflare管理"><a class="markdownIt-Anchor" href="#72-a-namecloudflare-1a将自己的域名交给cloudflare管理"></a> 7.2. <a name="cloudflare-1"></a>将自己的域名交给cloudflare管理</h3>
+<p>点击左侧的管理域（或者账户主页）</p>
+<p><img lazyload src="/images/loading.svg" data-src="image-18.png" alt="alt text"></p>
 <p>点击添加域</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-19.png"
-                      alt="alt text"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-19.png" alt="alt text"></p>
 <p>输入自己的域名：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-20.png"
-                      alt="alt text"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-20.png" alt="alt text"></p>
 <p>选择免费计划。</p>
-<h3 id="7-3-将自己域名的DNS服务器改为cloudflare"><a href="#7-3-将自己域名的DNS服务器改为cloudflare" class="headerlink" title="7.3. 将自己域名的DNS服务器改为cloudflare"></a>7.3. <a name='DNScloudflare'></a>将自己域名的DNS服务器改为cloudflare</h3><p>将自己的域名添加到cloudflare后，点击配置自己域名的DNS配置。拉到最下方，可以看到cloudflare的DNS服务器域名，接着打开自己购买域名的网站，把DNS服务器改成这两个。</p>
+<h3 id="73-a-namednscloudflarea将自己域名的dns服务器改为cloudflare"><a class="markdownIt-Anchor" href="#73-a-namednscloudflarea将自己域名的dns服务器改为cloudflare"></a> 7.3. <a name="DNScloudflare"></a>将自己域名的DNS服务器改为cloudflare</h3>
+<p>将自己的域名添加到cloudflare后，点击配置自己域名的DNS配置。拉到最下方，可以看到cloudflare的DNS服务器域名，接着打开自己购买域名的网站，把DNS服务器改成这两个。</p>
 <blockquote>
 <p>注：一切跟DNS相关的东西可能都需要等待时间，等待当地及其他地区的DNS缓存刷新，这个过程可以不用着急，通过域名有时不能访问是正常的。</p>
 </blockquote>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-21.png"
-                      alt="alt text"
-                ></p>
-<h3 id="7-4-通过cloudflare添加DNS记录，使域名指向github-ip，以便加速生成。"><a href="#7-4-通过cloudflare添加DNS记录，使域名指向github-ip，以便加速生成。" class="headerlink" title="7.4. 通过cloudflare添加DNS记录，使域名指向github ip，以便加速生成。"></a>7.4. <a name='cloudflareDNSgithubip'></a>通过cloudflare添加DNS记录，使域名指向github ip，以便加速生成。</h3><p>添加记录，值为github的ip地址：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-22.png"
-                      alt="alt text"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-21.png" alt="alt text"></p>
+<h3 id="74-a-namecloudflarednsgithubipa通过cloudflare添加dns记录使域名指向github-ip以便加速生成"><a class="markdownIt-Anchor" href="#74-a-namecloudflarednsgithubipa通过cloudflare添加dns记录使域名指向github-ip以便加速生成"></a> 7.4. <a name="cloudflareDNSgithubip"></a>通过cloudflare添加DNS记录，使域名指向github ip，以便加速生成。</h3>
+<p>添加记录，值为github的ip地址：</p>
+<p><img lazyload src="/images/loading.svg" data-src="image-22.png" alt="alt text"></p>
 <p>添加记录选择A记录，填入自己的域名（写入@即可）和github ip，使域名指向github，并且通过cloudflare代理。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/posts/56132/image-23.png"
-                      alt="alt text"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-23.png" alt="alt text"></p>
 <blockquote>
 <p>注：四个ip地址都要添加。</p>
 </blockquote>
@@ -688,7 +637,7 @@
             
 
             
-                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+                本文章采用 <a class="license" target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
             
         </li>
     </ul>
@@ -772,7 +721,9 @@
 	<div class="post-toc">
 		<div class="toc-title">目录</div>
 		<div class="page-title">我是怎么用hexo+github page 搭建自己的博客网站的</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="nav-text">记录一下我的博客搭建过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%89%8D%E8%A8%80"><span class="nav-text">1. 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%A1%86%E6%9E%B6%E5%8F%8A%E5%B7%A5%E5%85%B7%EF%BC%9Agithub-page%EF%BC%8Chexo%EF%BC%8Ccloudflare"><span class="nav-text">2. 框架及工具：github page，hexo，cloudflare</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6%EF%BC%9Ahexo"><span class="nav-text">2.1. 前端框架：hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%EF%BC%9Agithub-page"><span class="nav-text">2.2. 静态网站托管：github page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E5%85%8D%E8%B4%B9%E7%9A%84CDN%E5%8A%A0%E9%80%9F%E7%AB%99%E7%82%B9%EF%BC%9Acloudflare"><span class="nav-text">2.3. 免费的CDN加速站点：cloudflare</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E9%83%A8%E7%BD%B2%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87"><span class="nav-text">3. 部署前的准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E5%AE%89%E8%A3%85npm%E4%B8%8Egit"><span class="nav-text">3.1. 安装npm与git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%AE%89%E8%A3%85hexo-%E5%B9%B6%E5%88%9D%E5%A7%8B%E5%8C%96hexo%E9%A1%B9%E7%9B%AE"><span class="nav-text">4. 安装hexo 并初始化hexo项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E5%AE%89%E8%A3%85hexo"><span class="nav-text">4.1. 安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E5%88%9D%E5%A7%8B%E5%8C%96hexo%E9%A1%B9%E7%9B%AE"><span class="nav-text">4.2. 初始化hexo项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2hexo%E9%A1%B9%E7%9B%AE"><span class="nav-text">4.3. 本地部署hexo项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%AE%BF%E9%97%AE%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99"><span class="nav-text">4.4. 在浏览器中访问个人网站</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E9%85%8D%E7%BD%AEgithub-pages"><span class="nav-text">5. 配置github pages</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E5%88%9B%E5%BB%BAgithub%E8%B4%A6%E6%88%B7"><span class="nav-text">5.1. 创建github账户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93%E5%B9%B6%E9%83%A8%E7%BD%B2%E4%BB%A3%E7%A0%81"><span class="nav-text">5.2. 创建仓库并部署代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E9%BA%BB%E7%83%A6%E7%9A%84%E4%B8%9C%E8%A5%BF%E5%B0%B1%E5%9C%A8%E4%B8%8B%E9%9D%A2%E4%BA%86%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%BD%A0%E8%A7%89%E5%BE%97%E9%85%8D%E7%BD%AE%E5%88%B0github%E4%B8%8A%E5%B7%B2%E7%BB%8F%E8%B6%B3%E5%A4%9F%EF%BC%8C%E7%9C%8B%E5%88%B0%E8%BF%99%E9%87%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86%E4%BD%86%E6%98%AF%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%83%B3%E6%90%AD%E8%B5%B7%E4%B8%80%E4%B8%AA%E5%9B%BD%E5%86%85%E8%83%BD%E5%A4%9F%E8%BE%83%E4%B8%BA%E7%A8%B3%E5%AE%9A%E8%AE%BF%E9%97%AE%E7%9A%84%E7%BD%91%E7%AB%99%EF%BC%8C%E9%82%A3%E5%B0%B1%E6%8E%A5%E7%9D%80%E5%BE%80%E4%B8%8B%E7%9C%8B"><span class="nav-text">最麻烦的东西就在下面了，如果你觉得配置到github上已经足够，看到这里就可以了但是如果你想搭起一个国内能够较为稳定访问的网站，那就接着往下看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D%E5%B9%B6%E4%BD%BF%E7%94%A8cloudflare%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9F%E3%80%82"><span class="nav-text">6. 购买域名并使用cloudflare代理加速。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D"><span class="nav-text">6.1. 购买域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%E6%9B%BF%E6%8D%A2%E4%BD%A0%E7%9A%84%E5%9F%9F%E5%90%8D"><span class="nav-text">6.2. 替换你的域名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E4%BD%BF%E7%94%A8cloudflare%E5%81%9Acdn%E5%8A%A0%E9%80%9F%E3%80%82"><span class="nav-text">7. 使用cloudflare做cdn加速。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E6%89%93%E5%BC%80cloudflare%E6%B3%A8%E5%86%8C%E5%B9%B6%E7%99%BB%E5%BD%95"><span class="nav-text">7.1. 打开cloudflare注册并登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-%E5%B0%86%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D%E4%BA%A4%E7%BB%99cloudflare%E7%AE%A1%E7%90%86"><span class="nav-text">7.2. 将自己的域名交给cloudflare管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-%E5%B0%86%E8%87%AA%E5%B7%B1%E5%9F%9F%E5%90%8D%E7%9A%84DNS%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%94%B9%E4%B8%BAcloudflare"><span class="nav-text">7.3. 将自己域名的DNS服务器改为cloudflare</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-4-%E9%80%9A%E8%BF%87cloudflare%E6%B7%BB%E5%8A%A0DNS%E8%AE%B0%E5%BD%95%EF%BC%8C%E4%BD%BF%E5%9F%9F%E5%90%8D%E6%8C%87%E5%90%91github-ip%EF%BC%8C%E4%BB%A5%E4%BE%BF%E5%8A%A0%E9%80%9F%E7%94%9F%E6%88%90%E3%80%82"><span class="nav-text">7.4. 通过cloudflare添加DNS记录，使域名指向github ip，以便加速生成。</span></a></li></ol></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="nav-text"> 记录一下我的博客搭建过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-a-namea%E5%89%8D%E8%A8%80"><span class="nav-text"> 1. 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-a-namegithubpagehexocloudflarea%E6%A1%86%E6%9E%B6%E5%8F%8A%E5%B7%A5%E5%85%B7github-pagehexocloudflare"><span class="nav-text"> 2. 框架及工具：github page，hexo，cloudflare</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#21-a-name___hexo___a%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6hexo"><span class="nav-text"> 2.1. 前端框架：hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-a-namegithubpagea%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1github-page"><span class="nav-text"> 2.2. 静态网站托管：github page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-a-namecdncloudflarea%E5%85%8D%E8%B4%B9%E7%9A%84cdn%E5%8A%A0%E9%80%9F%E7%AB%99%E7%82%B9cloudflare"><span class="nav-text"> 2.3. 免费的CDN加速站点：cloudflare</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-a-name-1a%E9%83%A8%E7%BD%B2%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87"><span class="nav-text"> 3. 部署前的准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#31-a-namenpmgita%E5%AE%89%E8%A3%85npm%E4%B8%8Egit"><span class="nav-text"> 3.1. 安装npm与git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-a-namehexohexoa%E5%AE%89%E8%A3%85hexo-%E5%B9%B6%E5%88%9D%E5%A7%8B%E5%8C%96hexo%E9%A1%B9%E7%9B%AE"><span class="nav-text"> 4. 安装hexo 并初始化hexo项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#41-a-namehexoa%E5%AE%89%E8%A3%85hexo"><span class="nav-text"> 4.1. 安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-a-namehexo-1a%E5%88%9D%E5%A7%8B%E5%8C%96hexo%E9%A1%B9%E7%9B%AE"><span class="nav-text"> 4.2. 初始化hexo项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-a-namehexo-1a%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2hexo%E9%A1%B9%E7%9B%AE"><span class="nav-text"> 4.3. 本地部署hexo项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#44-a-name-1a%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%AE%BF%E9%97%AE%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99"><span class="nav-text"> 4.4. 在浏览器中访问个人网站</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-a-namegithubpagesa%E9%85%8D%E7%BD%AEgithub-pages"><span class="nav-text"> 5. 配置github pages</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#51-a-namegithuba%E5%88%9B%E5%BB%BAgithub%E8%B4%A6%E6%88%B7"><span class="nav-text"> 5.1. 创建github账户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#52-a-name-1a%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93%E5%B9%B6%E9%83%A8%E7%BD%B2%E4%BB%A3%E7%A0%81"><span class="nav-text"> 5.2. 创建仓库并部署代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E9%BA%BB%E7%83%A6%E7%9A%84%E4%B8%9C%E8%A5%BF%E5%B0%B1%E5%9C%A8%E4%B8%8B%E9%9D%A2%E4%BA%86%E5%A6%82%E6%9E%9C%E4%BD%A0%E8%A7%89%E5%BE%97%E9%85%8D%E7%BD%AE%E5%88%B0github%E4%B8%8A%E5%B7%B2%E7%BB%8F%E8%B6%B3%E5%A4%9F%E7%9C%8B%E5%88%B0%E8%BF%99%E9%87%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86brbr%E4%BD%86%E6%98%AF%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%83%B3%E6%90%AD%E8%B5%B7%E4%B8%80%E4%B8%AA%E5%9B%BD%E5%86%85%E8%83%BD%E5%A4%9F%E8%BE%83%E4%B8%BA%E7%A8%B3%E5%AE%9A%E8%AE%BF%E9%97%AE%E7%9A%84%E7%BD%91%E7%AB%99%E9%82%A3%E5%B0%B1%E6%8E%A5%E7%9D%80%E5%BE%80%E4%B8%8B%E7%9C%8B"><span class="nav-text"> 最麻烦的东西就在下面了，如果你觉得配置到github上已经足够，看到这里就可以了
+
+但是如果你想搭起一个国内能够较为稳定访问的网站，那就接着往下看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-a-namecloudflarea%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D%E5%B9%B6%E4%BD%BF%E7%94%A8cloudflare%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9F"><span class="nav-text"> 6. 购买域名并使用cloudflare代理加速。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#61-a-name-1a%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D"><span class="nav-text"> 6.1. 购买域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#62-a-name-1a%E6%9B%BF%E6%8D%A2%E4%BD%A0%E7%9A%84%E5%9F%9F%E5%90%8D"><span class="nav-text"> 6.2. 替换你的域名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-a-namecloudflarecdna%E4%BD%BF%E7%94%A8cloudflare%E5%81%9Acdn%E5%8A%A0%E9%80%9F"><span class="nav-text"> 7. 使用cloudflare做cdn加速。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#71-a-namecloudflare-1a%E6%89%93%E5%BC%80cloudflare%E6%B3%A8%E5%86%8C%E5%B9%B6%E7%99%BB%E5%BD%95"><span class="nav-text"> 7.1. 打开cloudflare注册并登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#72-a-namecloudflare-1a%E5%B0%86%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D%E4%BA%A4%E7%BB%99cloudflare%E7%AE%A1%E7%90%86"><span class="nav-text"> 7.2. 将自己的域名交给cloudflare管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#73-a-namednscloudflarea%E5%B0%86%E8%87%AA%E5%B7%B1%E5%9F%9F%E5%90%8D%E7%9A%84dns%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%94%B9%E4%B8%BAcloudflare"><span class="nav-text"> 7.3. 将自己域名的DNS服务器改为cloudflare</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#74-a-namecloudflarednsgithubipa%E9%80%9A%E8%BF%87cloudflare%E6%B7%BB%E5%8A%A0dns%E8%AE%B0%E5%BD%95%E4%BD%BF%E5%9F%9F%E5%90%8D%E6%8C%87%E5%90%91github-ip%E4%BB%A5%E4%BE%BF%E5%8A%A0%E9%80%9F%E7%94%9F%E6%88%90"><span class="nav-text"> 7.4. 通过cloudflare添加DNS记录，使域名指向github ip，以便加速生成。</span></a></li></ol></li></ol></li></ol>
 
 	</div>
 </div>
@@ -799,11 +750,11 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 3 篇文章
+                        共撰写了 4 篇文章
                     </span>
                     
                         <span>
-                            共 4.6k 字
+                            共 5.1k 字
                         </span>
                     
                 </p>
@@ -827,8 +778,8 @@
             </div>
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
-            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
-            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io" rel="external nofollow noreferrer">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine" rel="external nofollow noreferrer">Redefine v2.8.2</a></span>
         </div>
         
         
